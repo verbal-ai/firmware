@@ -1,0 +1,13 @@
+[Unit]
+Description=Run Firmware on Startup
+Before=network-pre.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/dev/Code/firmware/main.py
+WorkingDirectory=/home/dev/Code/firmware
+StandardOutput=journal
+StandardError=journal
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
